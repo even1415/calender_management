@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="20dp"
+                android:text="일정 추가"
+                android:layout_weight="1"/>
+
+            <Button
+                android:id="@+id/save"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="저장"
+                android:layout_weight="1"/>
+
+        </LinearLayout>
+
+    <EditText
+        android:id="@+id/title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:hint="Title" />
+
+    <EditText
+        android:id="@+id/memo"
+        android:layout_width="match_parent"
+        android:layout_height="fill_parent"
+        android:gravity="top"
+        android:lines="5"
+        android:ems="10"
+        android:inputType="textMultiLine"
+        android:hint="Memo" />
+
+    <DatePicker
+        android:id="@+id/date"
+        android:datePickerMode="calendar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center">
+    </DatePicker>
+
+    <TimePicker
+        android:id="@+id/time"
+        android:timePickerMode="spinner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    </TimePicker>
+
+    </LinearLayout>
+
+</ScrollView>
