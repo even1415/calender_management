@@ -7,35 +7,28 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textSize="20pt"
             android:layout_weight="1"
-            android:text="메모 보기"/>
+            android:text="[text]"/>
+        <!--schedule / memo, diary-->
 
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="edit"/>
+            android:text="add"/>
 
     </LinearLayout>
 
-    <TextView
+    <ListView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="[일정]"/>
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="[알람]"/>
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="[메모]"/>
+        android:id="@+id/calList"
+        android:layout_weight="1">
+    </ListView>
 
 </LinearLayout>

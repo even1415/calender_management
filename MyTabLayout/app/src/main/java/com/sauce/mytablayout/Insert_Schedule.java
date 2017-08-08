@@ -24,7 +24,7 @@ public class Insert_Schedule extends AppCompatActivity implements TimePicker.OnT
     myDBHelper myHelper;
     SQLiteDatabase sqlDB;
 
-    String dateYear, dateMonth, dateDay, timeHour, timeMinute;
+    int dateYear, dateMonth, dateDay, timeHour, timeMinute;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -45,9 +45,12 @@ public class Insert_Schedule extends AppCompatActivity implements TimePicker.OnT
         datePicker.init(datePicker.getYear(), datePicker.getMonth(), datePicker.getDayOfMonth(), new DatePicker.OnDateChangedListener() {
             @Override
             public void onDateChanged(DatePicker datePicker, int year, int month, int day) {
-                dateYear = String.format("%d", year);
-                dateMonth = String.format("%d", month+1);
-                dateDay = String.format("%d", day);
+//                dateYear = String.format("%d", year);
+//                dateMonth = String.format("%d", month+1);
+//                dateDay = String.format("%d", day);
+                dateYear = year;
+                dateMonth = month+1;
+                dateDay = day;
             }
         });
 
@@ -56,14 +59,13 @@ public class Insert_Schedule extends AppCompatActivity implements TimePicker.OnT
             public void onClick(View v) {
                 sqlDB = myHelper.getWritableDatabase();
                 sqlDB.execSQL("INSERT INTO groupTBL VALUES ( '"
-                        + title.getText().toString() + "', "
-                        + memo.getText().toString() + "', "
-                        + dateYear + "', "
-                        + dateMonth + "', "
-                        + dateDay + "', "
-                        + timeHour + "', "
-                        + timeMinute + "', "
-                        + ");");
+                        + title.getText().toString() + "', '"
+                        + memo.getText().toString() + "', '"
+                        + dateYear + "', '"
+                        + dateMonth + "', '"
+                        + dateDay + "', '"
+                        + timeHour + "', '"
+                        + timeMinute + "');");
                 sqlDB.close();
                 Toast.makeText(getApplicationContext(), "저장되었습니다.", Toast.LENGTH_SHORT).show();
 
@@ -90,7 +92,9 @@ public class Insert_Schedule extends AppCompatActivity implements TimePicker.OnT
 
     @Override
     public void onTimeChanged(TimePicker timePicker, int hour, int minute) {
-        timeHour = String.format("%d", hour);
-        timeMinute = String.format("%d", minute);
+//        timeHour = String.format("%d", hour);
+//        timeMinute = String.format("%d", minute);
+        timeHour = hour;
+        timeMinute = minute;
     }
 }

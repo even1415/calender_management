@@ -16,8 +16,8 @@ public class myDBHelper extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        db.execSQL("CREATE TABLE groupTBL (title CHAR(20) PRIMARY KEY, memo CHAR(200), " +
-                "year CHAR(20), month CHAR(20), day CHAR(20), hour CHAR(20), minute CHAR(20));");
+        db.execSQL("CREATE TABLE groupTBL (title CHAR(20) PRIMARY KEY, memo VARCHAR2, " +
+                "year INTEGER, month INTEGER, day INTEGER, hour INTEGER, minute INTEGER);");
     }
 
     @Override
