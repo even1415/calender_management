@@ -26,6 +26,8 @@
             android:theme="@android:style/Theme.Dialog">
 
         </activity>
+
+        <activity android:name=".View_contents"></activity>
     </application>
 
 </manifest>
